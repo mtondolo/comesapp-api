@@ -1,3 +1,6 @@
+// Allows us to latest ES features
+'use strict';
+
 // Import http from node.js
 const http = require('http');
 
