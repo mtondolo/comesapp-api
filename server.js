@@ -34,6 +34,24 @@ app.get('/api/butcheries', (request, response) => {
    response.json(butcheries);
 });
 
+// Listen to http get request and handle it for one resource
+app.get('/api/butcheries/:name', (request, response) => {
+    
+    // Get hold of request name
+    let butcheryname = request.params.name;
+    
+    // Filter throug the butcheries list
+    let butchery = butcheries.filter(butchery => {
+
+        //Return the matching butchery
+        return butchery.name == butcheryname;
+      });
+
+      // Response with the details of the matching butchery
+      response.json(butchery[0]);
+
+});
+
 // Include hostname and port
 const hostname = 'localhost';
 const port = 3001;
