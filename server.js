@@ -20,35 +20,39 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Import data json file
-let butcheries = require('./data');
+let agriculture_products = require('./data');
 
 // Listen to http get request and handle it
-app.get('/api/butcheries', (request, response) => {
+app.get('/api/agriculture_products', (request, response) => {
 
     // Response with message if no dota is found
-    if (!butcheries) {
-        response.status(404).json({ message: 'No butcheries found.' });
+    if (!agriculture_products) {
+        response.status(404).json({ message: 'No agriculture_products found.' });
       }
 
-   // Response data as butcheries and header as json  
-   response.json(butcheries);
+   // Response data as agriculture_products and header as json  
+   response.json(agriculture_products);
 });
 
 // Listen to http get request and handle it for one resource
-app.get('/api/butcheries/:name', (request, response) => {
+app.get('/api/agriculture_products/:description', (request, response) => {
     
     // Get hold of request name
-    let butcheryname = request.params.name;
+    let productDescription = request.params.description;
     
-    // Filter throug the butcheries list
-    let butchery = butcheries.filter(butchery => {
+    // Filter throug the agriculture_products list
+    let product = agriculture_products.filter(product => {
 
         //Return the matching butchery
-        return butchery.name == butcheryname;
+        return product.description == productDescription;
       });
 
+      if (!product) {
+        response.status(404).json({ message: 'Contact not found' });
+      }
+
       // Response with the details of the matching butchery
-      response.json(butchery[0]);
+      response.json(product[0]);
 
 });
 

@@ -1,34 +1,34 @@
-// Cons data array containing butcheries data
+// Cons data array containing agriculture products data
 const data = [
     {
       "id": 1,
-      "name": "All-Halaal Meat Bazaar",
-      "location": "Lusaka",
-      "phone": "0966573090"
+      "company": "Zambeef Products Plc",
+      "description": "Meet products, chicken products, eggs, milk",
+      "country": "Zambia"
     },
     {
       "id": 2,
-      "name": "Country Choice",
-      "location": "Showgrounds",
-      "phone": "0955937973"
+      "company": "Sealand Investments",
+      "description": "Seed multiplication, all agricultural products",
+      "country": "Malawi"
     },
     {
       "id": 3,
-      "name": "Lusaka Central Halaal",
-      "location": "Freedom Way",
-      "phone": "0979849112"
+      "company": "Trueways Enterprises Ltd",
+      "description": "honey processing",
+      "country": "Kenya"
     },
     {
       "id": 4,
-      "name": "R & M Meat Products",
-      "location": "Mumbwa Rd",
-      "phone": "0211286788"
+      "company": "Madhvani Group Limited",
+      "description": "agri-processing",
+      "country": "Uganda"
     },
     {
       "id": 5,
-      "name": "Star Halaal",
-      "location": "Lusaka",
-      "phone": "0977697084"
+      "company": "Joyful Gardens",
+      "description": "Grains, vegetables and chilli peppers",
+      "country": "Uganda"
     }
   ];
 
