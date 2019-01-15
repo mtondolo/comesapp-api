@@ -20,18 +20,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Import data json file
-let contacts = require('./data');
+let butcheries = require('./data');
 
 // Listen to http get request and handle it
-app.get('/api/contacts', (request, response) => {
+app.get('/api/butcheries', (request, response) => {
 
     // Response with message if no dota is found
-    if (!contacts) {
-        response.status(404).json({ message: 'No contacts found.' });
+    if (!butcheries) {
+        response.status(404).json({ message: 'No butcheries found.' });
       }
 
-   // Response data as contacts and header as json  
-   response.json(contacts);
+   // Response data as butcheries and header as json  
+   response.json(butcheries);
 });
 
 // Include hostname and port
