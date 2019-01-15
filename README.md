@@ -1,2 +1,2 @@
-## muzpal-api
-This is a RESTFull Node API that returns a list in json of butcheries that serve halaal (Muslim permissible) products in Lusaka. This API will be used as the data source for the MuzPal an Android app. 
+## biznet-api
+This is a RESTFull Node API that returns in json a list of companies supplying agricultural products in the COMESA region. This API is the data source for the biznet mobile app. 
