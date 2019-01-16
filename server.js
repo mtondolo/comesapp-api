@@ -13,6 +13,8 @@ const bodyParser = require('body-parser');
 // Allow api to take request from other domains
 const cors = require('cors');
 
+app.use(bodyParser.json());
+
 // Listen to url request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -55,6 +57,21 @@ app.get('/api/agriculture_products/:description', (request, response) => {
       response.json(product[0]);
 
 });
+
+app.post('/api/agriculture_products', (request, response) => {
+
+    let product = {
+      id: agriculture_products.length + 1,
+      company: request.body.company,
+      description: request.body.description,
+      country: request.body.country,
+    };
+  
+    agriculture_products.push(product);
+  
+    response.json(product);
+  
+  });
 
 // Include hostname and port
 const hostname = 'localhost';
