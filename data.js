@@ -26,9 +26,9 @@ const data = [
     },
     {
       "id": 5,
-      "company": "Joyful Gardens",
-      "description": "Grains, vegetables and chilli peppers",
-      "country": "Uganda"
+      "company": "Caferwa",
+      "description": "Coffee",
+      "country": "Rwanda"
     }
   ];
 
