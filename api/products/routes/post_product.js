@@ -4,13 +4,16 @@ const Product = require('../model/Product');
 const router = express.Router();
 
 router.route('/')
-  .get((req, res) => {
+  .post((req, res) => {
 
-    Product.find({}, (err, products) => {
+    const product = new Product(req.body);
+
+    product.save((err, product) => {
       if (err) {
         res.status(400).json(err);
       }
-      res.json(products);
+      res.json(product);
+      // res.json({ message: 'Contact saved! '});
     });
     
   });

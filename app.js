@@ -6,16 +6,16 @@
     app.controller('productController', function($scope, $http) {
 
       // Get the product from the endpoint
-      $http.get('http://localhost:3001/api/agriculture_products')
+      $http.get('http://localhost:3001/api/products')
         .then(function(response) {
-          $scope.agriculture_products = response.data;
+          $scope.products = response.data;
         });
 
         // Save the product to the new endpoint
         $scope.saveProduct = function(product) {
-            $http.post('http://localhost:3001/api/agriculture_products', product)
+            $http.post('http://localhost:3001/api/products', product)
               .then(function(response) {
-                $scope.agriculture_products.push(response.data);
+                $scope.products.push(response.data);
             });
           };
           
