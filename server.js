@@ -58,17 +58,21 @@ app.get('/api/agriculture_products/:description', (request, response) => {
 
 });
 
+// Listen to http post request and handle the request
 app.post('/api/agriculture_products', (request, response) => {
 
+   // Create the product to add
     let product = {
       id: agriculture_products.length + 1,
       company: request.body.company,
       description: request.body.description,
       country: request.body.country,
     };
-  
+
+    // Add the new product to the list
     agriculture_products.push(product);
-  
+
+    // Respond with the product object
     response.json(product);
   
   });
