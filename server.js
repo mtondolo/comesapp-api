@@ -25,9 +25,12 @@ var port = process.env.PORT || 8080;
 
 const server = app.listen(port, () => {
 
-  mongoose.connect(process.env.MONGOLAB_URI, function (error) {
-    if (error) console.error(error);
-    else console.log('mongo connected');
-});
+  mongoose.connect(process.env.MONGOLAB_URI, dbOptions, (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(`Server running at ${port}/`);
+
+  });
   
 });
