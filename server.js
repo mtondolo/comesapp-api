@@ -22,6 +22,16 @@ app.use('/api/products', require('./api/products/routes/get_products'));
 const hostname = 'localhost';
 const port = process.env.PORT || 8080;
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// set the home page route
+app.get('/', function(req, res) {
+
+	// ejs render automatically looks in the views folder
+	res.render('index');
+});
+
 const server = app.listen(port, hostname, () => {
 
   mongoose.connect(mongooseUri, dbOptions, (err) => {
