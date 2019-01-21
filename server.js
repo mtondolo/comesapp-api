@@ -12,24 +12,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-const MONGOLAB_URI = 'mongodb://mtondolo:l0k0!010@ds159624.mlab.com:59624/mt110179';
-//const mongooseUri = uriUtil.formatMongoose(mongodbUri);
-//const dbOptions = {};
+const mongodbUri = 'mongodb://mtondolo:l0k0!010@ds159624.mlab.com:59624/mt110179';
+const mongooseUri = uriUtil.formatMongoose(mongodbUri);
+const dbOptions = {};
 
 app.use('/api/products', require('./api/products/routes/post_product'));
 app.use('/api/products', require('./api/products/routes/get_products'));
 
-//const hostname = 'localhost';
-//const port = 3001;
-var port = process.env.PORT || 8080;
+const hostname = 'localhost';
+const port = 3001;
 
-const server = app.listen(port, () => {
+const server = app.listen(port, hostname, () => {
 
-  mongoose.connect(process.env.MONGOLAB_URI, dbOptions, (err) => {
+  mongoose.connect(mongooseUri, dbOptions, (err) => {
     if (err) {
       console.log(err);
     }
-    console.log(`Server running at ${port}/`);
+    console.log(`Server running at http://${hostname}:${port}/`);
 
   });
   
