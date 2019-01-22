@@ -1,5 +1,5 @@
 ## Biznet-api
-This is a RESTful Node API that returns in JSON a list of companies supplying agriculture products in the COMESA region. This API is the data source for the biznet mobile app. 
+This is a RESTful Node API that returns in JSON a list of companies supplying agriculture products. This API is the data source for the biznet mobile app. 
 ### Features
 Return a list of products in JSON format.
 ### Issues
