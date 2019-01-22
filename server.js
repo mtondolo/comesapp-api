@@ -20,7 +20,10 @@ app.use('/api/products', require('./api/products/routes/post_product'));
 app.use('/api/products', require('./api/products/routes/get_products'));
 
 const hostname = 'localhost';
-const port = 3001;
+//const port = 3001;
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
