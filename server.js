@@ -20,7 +20,7 @@ app.use('/api/products', require('./api/products/routes/post_product'));
 app.use('/api/products', require('./api/products/routes/get_products'));
 
 const hostname = 'localhost';
-const port = process.env.PORT || 8080;
+const port = 3001;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
