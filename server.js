@@ -23,7 +23,7 @@ const hostname = 'localhost';
 //const port = 3001;
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-//var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8080;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -35,11 +35,14 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-const server = app.listen(process.env.PORT || 8080, () => {
+const server = app.listen(port, hostname, () => {
+
   mongoose.connect(mongooseUri, dbOptions, (err) => {
     if (err) {
       console.log(err);
     }
     console.log(`Server running at http://${hostname}:${port}/`);
-  }); 
+
+  });
+  
 });
