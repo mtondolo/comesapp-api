@@ -35,13 +35,13 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-const server = app.listen(port, hostname, () => {
+const server = app.listen(port, () => {
 
   mongoose.connect(mongooseUri, dbOptions, (err) => {
     if (err) {
       console.log(err);
     }
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`Server running at ${port}/`);
 
   });
   
