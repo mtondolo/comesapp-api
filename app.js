@@ -1,7 +1,7 @@
 (function() {
     'use strict';
   
-    var app = angular.module('biznetApp', ['ngRoute']);
+    var app = angular.module('biznetApp', []);
   
     app.controller('productController', function($scope, $http) {
 
