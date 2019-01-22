@@ -1,8 +1,7 @@
 (function() {
     'use strict';
   
-    var app = angular.module('biznetApp', []);
-    var port = process.env.PORT || 8080;
+    var app = angular.module('biznetApp', ['ngRoute']);
   
     app.controller('productController', function($scope, $http) {
 
@@ -18,7 +17,6 @@
               .then(function(response) {
                 $scope.products.push(response.data);
             });
-          };
-          
+          };     
     });
 })();
