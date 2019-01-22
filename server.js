@@ -19,8 +19,6 @@ const dbOptions = {};
 app.use('/api/products', require('./api/products/routes/post_product'));
 app.use('/api/products', require('./api/products/routes/get_products'));
 
-const hostname = 'localhost';
-//const port = 3001;
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
@@ -36,13 +34,10 @@ app.get('/', function(req, res) {
 });
 
 const server = app.listen(port, () => {
-
   mongoose.connect(mongooseUri, dbOptions, (err) => {
     if (err) {
       console.log(err);
     }
-    console.log(`Server running at ${port}/`);
-
-  });
-  
+    console.log(`API is  running at ${port}/`);
+  }); 
 });
