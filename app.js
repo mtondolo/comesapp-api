@@ -3,19 +3,19 @@
   
     var app = angular.module('biznetApp', []);
   
-    app.controller('productController', function($scope, $http) {
+    app.controller('newsitemController', function($scope, $http) {
 
-      // Get the product from the endpoint
-      $http.get('https://beznet-api.herokuapp.com:8080/api/products')
+      // Get the news item from the endpoint
+      $http.get('https://beznet-api.herokuapp.com:8080/api/newslist')
         .then(function(response) {
-          $scope.products = response.data;
+          $scope.newslist = response.data;
         });
 
-        // Save the product to the new endpoint
-        $scope.saveProduct = function(product) {
-            $http.post('https://beznet-api.herokuapp.com:8080/api/products', product)
+        // Save the news item to the new endpoint
+        $scope.saveNewsItem = function(newsitem) {
+            $http.post('https://beznet-api.herokuapp.com:8080/api/newslist', newsitem)
               .then(function(response) {
-                $scope.products.push(response.data);
+                $scope.newslist.push(response.data);
             });
           };     
     });

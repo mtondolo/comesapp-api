@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html ng-app="biznetApp">
 <head>
-  <title>CBC-BiZNeT</title>
+  <title>COMESA News</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-  <body ng-controller="productController">
+  <body ng-controller="newsitemController">
 
     <div class="container">
 
       <!-- Form to save data through the endpoint-->
       <div class="col-sm-6">
-        <form ng-submit="saveProduct(product)">
+        <form ng-submit="saveNewsItem(newsitem)">
           <div class="form-group">
-            <input type="text" placeholder="Company Name" ng-model="product.company" class="form-control">
+            <input type="text" placeholder="Headline" ng-model="newsitem.headline" class="form-control">
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Product Description" ng-model="product.description" class="form-control">
+            <input type="text" placeholder="Story" ng-model="newsitem.story" class="form-control">
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Country" ng-model="product.country" class="form-control">
+            <input type="text" placeholder="Author" ng-model="newsitem.author" class="form-control">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -27,10 +27,10 @@
       <!-- List to display data throung the endpoint-->
       <div class="col-sm-6">
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat="product in products">
-            <h4>{{product.company}}</h4>
-            <p>{{product.description}}</p>
-            <p>{{product.country}}</p>
+          <li class="list-group-item" ng-repeat="newsitem in newslist">
+            <h4>{{newsitem.headline}}</h4>
+            <p>{{newsitem.story}}</p>
+            <p>{{newsitem.author}}</p>
           </li>
         </ul>
       </div>
