@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="biznetApp">
+<html ng-app="newsapiApp">
 <head>
   <title>COMESA News</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,6 +20,9 @@
           <div class="form-group">
             <input type="text" placeholder="Author" ng-model="newsitem.author" class="form-control">
           </div>
+          <div class="form-group">
+            <input type="text" placeholder="Image" ng-model="newsitem.image" class="form-control">
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
@@ -27,10 +30,11 @@
       <!-- List to display data throung the endpoint-->
       <div class="col-sm-6">
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat="newsitem in newslist">
+          <li class="list-group-item" ng-repeat="newsitem in newsitems">
             <h4>{{newsitem.headline}}</h4>
             <p>{{newsitem.story}}</p>
             <p>{{newsitem.author}}</p>
+            <p>{{newsitem.image}}</p>
           </li>
         </ul>
       </div>

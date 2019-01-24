@@ -16,8 +16,8 @@ const mongodbUri = 'mongodb://mtondolo:l0k0!010@ds159624.mlab.com:59624/mt110179
 const mongooseUri = uriUtil.formatMongoose(mongodbUri);
 const dbOptions = {};
 
-app.use('/api/newslist', require('./api/newslist/routes/post_newsitem'));
-app.use('/api/newslist', require('./api/newslist/routes/get_newslist'));
+app.use('/api/newsitems', require('./api/newsitems/routes/post_newsitem'));
+app.use('/api/newsitems', require('./api/newsitems/routes/get_newsitems'));
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
