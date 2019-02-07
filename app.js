@@ -1,7 +1,7 @@
 (function() {
     'use strict';
   
-    var app = angular.module('newsapiApp', []);
+    var app = angular.module('comesApp', []);
   
     app.controller('newsitemController', function($scope, $http) {
 
