@@ -15,13 +15,13 @@
             <input type="text" placeholder="Headline" ng-model="newsitem.headline" class="form-control">
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Story" ng-model="newsitem.story" class="form-control">
+            <input type="text" placeholder="Story Url" ng-model="newsitem.storyUrl" class="form-control">
           </div>
           <div class="form-group">
             <input type="text" placeholder="Date" ng-model="newsitem.date" class="form-control">
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Image" ng-model="newsitem.image" class="form-control">
+            <input type="text" placeholder="Image Url" ng-model="newsitem.imageUrl" class="form-control">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -32,9 +32,9 @@
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="newsitem in newsitems">
             <h4>{{newsitem.headline}}</h4>
-            <p>{{newsitem.story}}</p>
+            <p>{{newsitem.storyUrl}}</p>
             <p>{{newsitem.author}}</p>
-            <p>{{newsitem.image}}</p>
+            <p>{{newsitem.imageUrl}}</p>
           </li>
         </ul>
       </div>
