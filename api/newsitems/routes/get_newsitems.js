@@ -13,7 +13,7 @@ router.route('/')
       }
       res.json(newsitems);
     }).sort(
-      {created_At:'desc'}
+      ('-created_At')
       ); 
 
   });
