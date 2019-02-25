@@ -12,7 +12,7 @@ router.route('/')
         res.status(400).json(err);
       }
       res.json(newsitems);
-    }).sort({date:1}).limit(10); 
+    }).sort({created_At:1}).limit(10); 
 
   });
 module.exports = router;
