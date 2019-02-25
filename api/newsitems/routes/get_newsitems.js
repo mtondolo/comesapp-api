@@ -11,6 +11,6 @@ router.route('/')
         res.status(400).json(err);
       }
       res.json(newsitems);
-    }).sort({date:-1}); ;   
+    }).sort({date:1}); ;   
   });
 module.exports = router;
