@@ -4,6 +4,7 @@ const NewsItem = require('../model/NewsItem');
 const router = express.Router();
 
 router.route('/')
+
   .get((req, res) => {
 
     NewsItem.find({}, (err, newsitems) => {
@@ -11,6 +12,7 @@ router.route('/')
         res.status(400).json(err);
       }
       res.json(newsitems);
-    }).sort({date:1}); ;   
+    }).sort({date:1}).limit(10); 
+
   });
 module.exports = router;
