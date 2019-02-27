@@ -9,7 +9,7 @@ const NewsItemSchema = new Schema({
     storyUrl: { type: mongoose.SchemaTypes.Url, required: true },   
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true }    
       
-}, { collection: 'newsitems' },
+}, 
 
 { timestamps: { createdAt: 'created_at' } });
 
