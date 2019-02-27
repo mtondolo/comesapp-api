@@ -6,12 +6,17 @@ const NewsItemSchema = new Schema({
     headline: { type: String, required: true },
     story: [{ type: String, required: true }],
     storyUrl: { type: mongoose.SchemaTypes.Url, required: true }, 
-    created_At: { type : Date, default: Date.now() }, 
-    imageUrl: { type: mongoose.SchemaTypes.Url, required: true }         
+    imageUrl: { type: mongoose.SchemaTypes.Url, required: true },   
+    created_At: { type : Date }, 
+    updated_At: { type : Date }       
 });
 
 NewsItemSchema.pre('save', function(next) {
-    this.created_At = Date.now();
+    now = new Date();
+    this.updated_At = now;
+    if ( !this.created_At ) {
+      this.created_At = now;
+    }
     next();
   });
 
