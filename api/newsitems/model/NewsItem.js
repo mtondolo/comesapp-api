@@ -6,7 +6,7 @@ const NewsItemSchema = new Schema({
     headline: { type: String, required: true },
     story: [{ type: String, required: true }],
     storyUrl: { type: mongoose.SchemaTypes.Url, required: true },  
-    created_At: { type: Number, default: (new Date()).getTime() },  
+    created_At: { type: Number, default: new Date },  
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true }    
       
 });
