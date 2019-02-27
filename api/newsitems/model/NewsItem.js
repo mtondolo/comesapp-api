@@ -9,8 +9,8 @@ const NewsItemSchema = new Schema({
     storyUrl: { type: mongoose.SchemaTypes.Url, required: true },   
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true }    
       
-}, { collection: 'newsitems' });
+}, { collection: 'newsitems' },
 
-NewsItemSchema.plugin(timestamps)
+{ timestamps: { createdAt: 'created_at' } });
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
