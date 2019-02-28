@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('mongoose-type-url');
-const timestamps = require('mongoose-timestamp');
+const createdPlugin = require('mongoose-plugin-created');
 const Schema = mongoose.Schema;
 
 const NewsItemSchema = new Schema({
@@ -10,6 +10,6 @@ const NewsItemSchema = new Schema({
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true },        
 });
 
-NewsItemSchema.plugin(timestamps);
+NewsItemSchema.plugin(createdPlugin);
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);

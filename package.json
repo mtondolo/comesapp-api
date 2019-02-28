@@ -16,7 +16,7 @@
     "express": "^4.16.4",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^5.4.4",
-    "mongoose-timestamp": "^0.6.0",
+    "mongoose-plugin-created": "^1.4.3",
     "mongoose-type-url": "^1.0.5"
   }
 }
