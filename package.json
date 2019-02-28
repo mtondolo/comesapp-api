@@ -14,6 +14,7 @@
     "cors": "^2.8.5",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "goodeggs-mongoose-timestamps": "^1.0.0",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^5.4.4",
     "mongoose-type-url": "^1.0.5"

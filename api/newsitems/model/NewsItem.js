@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 require('mongoose-type-url');
 const Schema = mongoose.Schema;
+const timestamps = require ('goodeggs-mongoose-timestamps');
 
 const NewsItemSchema = new Schema({
     headline: { type: String, required: true },
@@ -9,5 +10,7 @@ const NewsItemSchema = new Schema({
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true },   
         
 });
+
+NewsItemSchema.plugin(timestamps);
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
