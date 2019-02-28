@@ -9,4 +9,6 @@ const NewsItemSchema = new Schema({
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true },        
 });
 
+
+
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
