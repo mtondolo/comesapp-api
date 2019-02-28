@@ -20,7 +20,7 @@ router.route('/')
     // Get last 10 createad items  
     limit(10).
     
-    ObjectId('_id').getTimestamp()
+    getTimestamp('_id')
 
   });
 module.exports = router;
