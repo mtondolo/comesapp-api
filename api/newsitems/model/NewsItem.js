@@ -10,7 +10,7 @@ const NewsItemSchema = new Schema({
 });
 
 NewsItemSchema.virtual('created').get( function () { 
-    return this["_created"] = this._id.getTimestamp();
+    return this._id.getTimestamp();
   });
 
   NewsItemSchema.set('toJSON', {
