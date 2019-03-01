@@ -6,13 +6,16 @@ const NewsItemSchema = new Schema({
     headline: { type: String, required: true },
     story: [{ type: String, required: true }],
     storyUrl: { type: mongoose.SchemaTypes.Url, required: true },
-    imageUrl: { type: mongoose.SchemaTypes.Url, required: true },   
-        
+    imageUrl: { type: mongoose.SchemaTypes.Url, required: true },     
 });
 
 NewsItemSchema.virtual('created').get( function () {
-    if (this['_id']) return this['_id'];
-    return this['_id'] = this._id.getTimestamp();
+    if (this["_created"]) return this["_created"];
+    return this["_created"] = this._id.getTimestamp();
   });
+
+  NewsItemSchema.set('toJSON', {
+    virtuals: true
+});
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
