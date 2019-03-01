@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 require('mongoose-type-url');
 const Schema = mongoose.Schema;
-const timestamps = require ('goodeggs-mongoose-timestamps');
 
 const NewsItemSchema = new Schema({
     headline: { type: String, required: true },
@@ -11,6 +10,9 @@ const NewsItemSchema = new Schema({
         
 });
 
-NewsItemSchema.plugin(timestamps);
+NewsItemSchema.virtual('created').get( function () {
+    if (this["_created"]) return this["_created"];
+    return this["_created"] = this._id.getTimestamp();
+  });
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
