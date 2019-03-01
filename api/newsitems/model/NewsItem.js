@@ -9,14 +9,12 @@ const NewsItemSchema = new Schema({
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true },     
 });
 
-NewsItemSchema.virtual('created').get( function () { 
-    return this["_created"] = this._id.getTimestamp();
+// Get datetime stamp from objectid
+NewsItemSchema.virtual('created_At').get( function () { 
+    return this._id.getTimestamp();
   });
 
-  NewsItemSchema.set('toObject', {
-    virtuals: true
-});
-
+  // Set the result to JSON
   NewsItemSchema.set('toJSON', {
     virtuals: true
 });
