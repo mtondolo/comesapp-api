@@ -10,8 +10,12 @@ const NewsItemSchema = new Schema({
 });
 
 NewsItemSchema.virtual('created').get( function () { 
-    return this._id.getTimestamp();
+    return this["_created"] = this._id.getTimestamp();
   });
+
+  NewsItemSchema.set('toObject', {
+    virtuals: true
+});
 
   NewsItemSchema.set('toJSON', {
     virtuals: true
