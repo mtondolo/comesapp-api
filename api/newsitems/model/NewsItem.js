@@ -11,8 +11,8 @@ const NewsItemSchema = new Schema({
 });
 
 NewsItemSchema.virtual('created').get( function () {
-    if (this["_id"]) return this["_id"];
-    return this["_id"] = this._id.getTimestamp();
+    if (this['_id']) return this['_id'];
+    return this['_id'] = this._id.getTimestamp();
   });
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
