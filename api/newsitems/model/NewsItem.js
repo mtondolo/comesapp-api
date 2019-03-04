@@ -11,7 +11,7 @@ const NewsItemSchema = new Schema({
 
 // Get datetime stamp from objectid
 NewsItemSchema.virtual('created_At').get( function () { 
-    return this._id.getTimestamp();
+    return this._id.getTimestamp().getTime();
   });
 
   // Set the result to JSON
