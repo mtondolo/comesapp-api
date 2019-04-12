@@ -9,7 +9,7 @@ const NewsItemSchema = new Schema({
     imageUrl: { type: mongoose.SchemaTypes.Url, required: true },     
 });
 
-// Get datetime stamp from objectid
+// Get datetime stamp from objectid in milliseconds
 NewsItemSchema.virtual('created_At').get( function () { 
     return this._id.getTimestamp().getTime();
   });
