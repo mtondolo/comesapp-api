@@ -17,8 +17,8 @@ router.route('/')
     // Get all items desc by created date
     sort( [['_id', -1]] ).
 
-    // Get last 10 createad items  
-    limit(10)
+    // Get last 15 createad items  
+    limit(15)
     
   });
   
