@@ -23,6 +23,9 @@
           <div class="form-group">
             <input type="text" placeholder="Image Url" ng-model="newsitem.imageUrl" class="form-control">
           </div>
+          <div class="form-group">
+            <input type="text" placeholder="Image Description" ng-model="newsitem.imageDescription" class="form-control">
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
@@ -35,6 +38,7 @@
             <p>{{newsitem.storyUrl}}</p>
             <p>{{newsitem.author}}</p>
             <p>{{newsitem.imageUrl}}</p>
+            <p>{{newsitem.imageDescription}}</p>
           </li>
         </ul>
       </div>
