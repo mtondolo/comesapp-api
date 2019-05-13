@@ -18,7 +18,10 @@
                 $scope.newsitems.push(response.data);
             });
           };    
-          
+    });
+
+    app.controller('eventController', function($scope, $http) {
+     
           // Get the events from the endpoint
       $http.get('https://beznet-api.herokuapp.com:8080/api/events')
       .then(function(response) {
@@ -26,7 +29,7 @@
       });
 
        // Save the event to the new endpoint
-       $scope.saveEvent = function(newsitem) {
+       $scope.saveEvent = function(event) {
         $http.post('https://beznet-api.herokuapp.com:8080/api/events', event)
           .then(function(response) {
             $scope.events.push(response.data);
