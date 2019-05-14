@@ -18,6 +18,8 @@ const dbOptions = {};
 
 app.use('/api/newsitems', require('./api/newsitems/routes/post_newsitem'));
 app.use('/api/newsitems', require('./api/newsitems/routes/get_newsitems'));
+app.use('/api/events', require('./api/events/routes/post_event'));
+app.use('/api/events', require('./api/events/routes/get_events'));
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku

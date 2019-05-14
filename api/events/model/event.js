@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-require('mongoose-type-url');
 const Schema = mongoose.Schema;
 
-// Scehema for events
 const EventSchema = new Schema({
     title: { type: String, required: true },
     venue: { type: String, required: true },    

@@ -13,7 +13,7 @@ router.route('/')
         res.status(400).json(err);
       }
       res.json(event);
-      // res.json({ message: 'News Item saved! '});
+      // res.json({ message: 'Event saved! '});
     });
     
   });
