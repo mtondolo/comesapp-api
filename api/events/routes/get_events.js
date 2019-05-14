@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Event = require('../model/Event');
+const Event = require('../eventsModel/Event');
 const router = express.Router();
 
 router.route('/')
