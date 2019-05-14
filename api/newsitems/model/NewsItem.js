@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 require('mongoose-type-url');
 const Schema = mongoose.Schema;
 
+// Schema for news
 const NewsItemSchema = new Schema({
     headline: { type: String, required: true },
     story: [{ type: String, required: true }],
@@ -21,6 +22,8 @@ NewsItemSchema.virtual('created_At').get( function () {
 });
 
 module.exports = mongoose.model('NewsItem', NewsItemSchema);
+
+ 
 
 
 

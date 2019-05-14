@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+require('mongoose-type-url');
 const Schema = mongoose.Schema;
 
+// Schema for events
 const EventSchema = new Schema({
     title: { type: String, required: true },
     venue: { type: String, required: true },    
@@ -15,5 +17,5 @@ const EventSchema = new Schema({
   EventSchema.set('toJSON', {
     virtuals: true
   });
-  
+
   module.exports = mongoose.model('Event', EventSchema);
