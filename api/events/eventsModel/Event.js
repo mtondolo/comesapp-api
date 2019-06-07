@@ -16,7 +16,7 @@ const EventSchema = new Schema({
       required: 'Email address is required',
       validate: [validateEmail, 'Please fill a valid email address'],
       match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']},
-      startDate: {type: Date}   
+      startDate: {type: Date, required: true}   
   });
   
   // Get datetime stamp from objectid in milliseconds
